@@ -25,12 +25,12 @@ for (let i = 0; i < myLibrary.length; i++) {
 }
 
 button.addEventListener("click", createForm);
+
 let wasCalled = false;
 function createForm() {
     if(!wasCalled) {
         wasCalled = true;
         //create break line
-        let br = document.createElement("br");
 
         //create form
         let form = document.createElement("form");
@@ -45,23 +45,40 @@ function createForm() {
         title.setAttribute("placeholder", "Title")
         form.appendChild(title);
         
-        form.appendChild(br.cloneNode());
+
 
         //create input for author and append to form
-        let author = document.createElement("author");
+        let author = document.createElement("input");
         author.setAttribute("type", "text");
         author.setAttribute("id", "author");
-        author.setAttribute("placeholder", "author");
+        author.setAttribute("placeholder", "Author");
         form.appendChild(author);
         
-        form.appendChild(br.cloneNode());
+
+        //create input for pages and append to form
+        let pages = document.createElement("input");
+        pages.setAttribute("type", "text");
+        pages.setAttribute("id", "pages")
+        pages.setAttribute("placeholder", "Pages")
+        form.appendChild(pages);
+        
+
+
+        //create input for pages and append to form
+        let read = document.createElement("input");
+        read.setAttribute("type", "text");
+        read.setAttribute("id", "read")
+        read.setAttribute("placeholder", "Read/not")
+        form.appendChild(read);
+        
+
         
         //create submit button and append to form
         let submit = document.createElement("input");
         submit.setAttribute("type", "submit");
+        submit.setAttribute("id", "submit");
         submit.setAttribute("value", "Submit");
         form.appendChild(submit);
-        
     }
     
 }
