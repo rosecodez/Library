@@ -1,5 +1,5 @@
 //access elements with DOM
-let button = document.getElementById('button');
+const button = document.querySelector("button");
 
 //constructor for making book objects
 function Book(title, author, pages, read) {
@@ -23,31 +23,45 @@ function addBookToLibrary() {
 for (let i = 0; i < myLibrary.length; i++) {
     console.log(myLibrary[i])
 }
+
 button.addEventListener("click", createForm);
-
+let wasCalled = false;
 function createForm() {
-    //create form
-    let form = document.createElement("form");
-    form.setAttribute("method", "post");
-    form.setAttribute("action", "submit.php");  
+    if(!wasCalled) {
+        wasCalled = true;
+        //create break line
+        let br = document.createElement("br");
 
-    //create input for title and append to form
-    let title = document.createElement("input");
-    title.setAttribute("type", "text");
-    title.setAttribute("name", "title")
-    title.setAttribute("placeholder", "Title")
-    form.appendChild(title);
+        //create form
+        let form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "submit.php");  
+        document.body.appendChild(form);
 
-    //create input for author and append to form
-    let author = document.createElement("author");
-    author.setAttribute("type", "text");
-    author.setAttribute("name", "title");
-    author.setAttribute("placeholder", "author");
-    form.appendChild(author);
+        //create input for title and append to form
+        let title = document.createElement("input");
+        title.setAttribute("type", "text");
+        title.setAttribute("id", "title")
+        title.setAttribute("placeholder", "Title")
+        form.appendChild(title);
+        
+        form.appendChild(br.cloneNode());
 
-    //create submit button and append to form
-    let submit = document.createElement("input");
-    submit.setAttribute("type", "submit");
-    submit.setAttribute("value", "Submit");
-    form.appendChild(submit);
+        //create input for author and append to form
+        let author = document.createElement("author");
+        author.setAttribute("type", "text");
+        author.setAttribute("id", "author");
+        author.setAttribute("placeholder", "author");
+        form.appendChild(author);
+        
+        form.appendChild(br.cloneNode());
+        
+        //create submit button and append to form
+        let submit = document.createElement("input");
+        submit.setAttribute("type", "submit");
+        submit.setAttribute("value", "Submit");
+        form.appendChild(submit);
+        
+    }
+    
 }
