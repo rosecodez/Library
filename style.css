@@ -6,6 +6,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
+
 }
 
 td, th {
@@ -37,7 +38,6 @@ button:hover, #submit:hover {
     background-color: #65a30d;
 }
 #table-container {
-    display: flex;
     justify-content: center;
     padding-top: 10px;
 }

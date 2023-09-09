@@ -4,7 +4,6 @@ const submit = document.getElementById("submit");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
-const readed = document.getElementById("readed");
 
 //constructor for making book objects
 function Book(title, author, pages, read) {
@@ -32,47 +31,27 @@ for (let i = 0; i < myLibrary.length; i++) {
 
 button.addEventListener("click", () => {
     dialog.showModal();
-    displayTable();
 });
 
 submit.addEventListener("click", function (event) {
     event.preventDefault();
-    dialog.close();
-    th1.textContent = title.value;
-    th2.textContent = author.value;
-    th3.textContent = pages.value;
-    th4.textContent = readed.value;
 });
 
 function displayTable() {
-    tableContainer.style.display = "flex";
+    table.style.display = "table";
 }
 const tableContainer = document.getElementById("table-container");
 //create table row with dom
 function createTable() {
     //table
-    let table = document.createElement("table");
+    const table = document.createElement("table");
     tableContainer.appendChild(table);
-    table.setAttribute("id", "table");
+    
     //row
-    let row = document.createElement("tr");
+    const row = document.createElement("tr");
     table.appendChild(row);
-    row.setAttribute("id", "row");
     //th
-    let th1 = document.createElement("th");
-    row.appendChild(th1);
-    th1.setAttribute("id", "th1");
-
-    let th2 = document.createElement("th");
-    row.appendChild(th2);
-    th2.setAttribute("id", "th2");
-
-    let th3 = document.createElement("th");
-    row.appendChild(th3);
-    th3.setAttribute("id", "th3");
-
-    let th4 = document.createElement("th");
-    row.appendChild(th4);
-    th4.setAttribute("id", "th4");
+    const th = document.createElement("th");
+    row.appendChild(th);
 }
 createTable();
