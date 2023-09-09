@@ -48,13 +48,31 @@ form {
     align-items: center;
     gap: 20px;
 }
+::backdrop, dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#dialog-container {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+#dialog {
+    position: relative;
+    width: 600px;
+    margin-left: 244px;
+    height: 474px;
+    margin-top: 85px;
+}
+text {
+    font-size: 20px;
+}
 label {
   padding-right: 10px;
 }
-input[class=form], select {
+input[class=form] {
     padding: 12px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid;
 }
 input:focus {
-    background-color: lightblue;
+    background-color: #f7fee7;
 }
