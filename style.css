@@ -6,12 +6,39 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
 }
-  
+
 td, th {
     border: 1px solid #083344;
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
-  
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+button {
+    background-color: #92400e; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 16px;
+}
+button:hover {
+    background-color: #65a30d;
+    color: white;
+}
+#table-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
