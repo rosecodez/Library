@@ -1,11 +1,14 @@
 //access elements with DOM
 const button = document.querySelector("button");
-const submit = document.getElementById("submit");
+const confirm = document.getElementById("confirm");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
+const dialog = document.querySelector("dialog");
 const readed = document.getElementById("readed");
+const notreaded = document.getElementById("notreaded");
 const cancel = document.getElementById("cancel");
+
 //constructor for making book objects
 function Book(title, author, pages, read) {
   this.title = title;
@@ -35,13 +38,17 @@ button.addEventListener("click", () => {
     displayTable();
 });
 
-submit.addEventListener("click", function (event) {
+confirm.addEventListener("click", function (event) {
     event.preventDefault();
     dialog.close();
     th1.textContent = title.value;
     th2.textContent = author.value;
     th3.textContent = pages.value;
-    th4.textContent = readed.value;
+    if(readed.checked) {
+        th4.textContent = readed.value;
+    } else if (notreaded.checked) {
+        th4.textContent = notreaded.value;
+    }
 });
 
 function displayTable() {
