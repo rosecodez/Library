@@ -25,15 +25,15 @@
                     <label for="pages">Pages</label>
                     <input type="pages" class="form" id="pages" name="pages" value=""  placeholder="pages"/>
                     <div id="readed">
-                        <label for="readed">Read:</label>
-                        <input type="radio" name="readed" id="yes" value="true">
-                        <label for="yes">Yes</label>
-                        <input type="radio" name="notreaded" id="no" value="false">
-                        <label for="no">No</label> <br><br>
+                        <input type="radio" id="readed" name="check" value="yes">
+                        <label for="readed">Readed</label><br>
+                        <input type="radio" id="notreaded" name="check" value="no">
+                        <label for="notreaded">Not readed</label><br>
+
                     </div>    
             <div>
-                <button value="cancel" formmethod="dialog">Cancel</button>
-                <button id="submit" value="default">Confirm</button>
+                <button id ="cancel" value="cancel" formmethod="dialog">Cancel</button>
+                <button id="submit" value="default">Confirm</button>  
             </div>
             </form>
         </dialog>

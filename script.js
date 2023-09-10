@@ -5,7 +5,7 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const readed = document.getElementById("readed");
-
+const cancel = document.getElementById("cancel");
 //constructor for making book objects
 function Book(title, author, pages, read) {
   this.title = title;
