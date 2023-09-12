@@ -38,6 +38,10 @@ button.addEventListener("click", () => {
 
 confirm.addEventListener("click", function (event) {
     createRow();
+    document.querySelector("th1");
+    document.querySelector("th2");
+    document.querySelector("th3");
+    document.querySelector("th4");
     event.preventDefault();
     dialog.close();
     th1.textContent = title.value;
@@ -48,8 +52,20 @@ confirm.addEventListener("click", function (event) {
     } else if (notreaded.checked) {
         th4.textContent = notreaded.value;
     }
+    
 });
-
+confirm.onclick = function () {
+    let count = 0;
+    count++;
+    console.log(count);
+    if (count <=2) {
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        readed.checked = false;
+        notreaded.checked = false;
+    }
+}
 
 function displayTable() {
     tableContainer.style.display = "flex";
