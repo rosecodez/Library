@@ -1,3 +1,5 @@
+let count = 0;
+
 //access elements with DOM
 const table = document.getElementById("table");
 const tableContainer = document.getElementById("table-container");
@@ -24,7 +26,7 @@ const myLibrary = [];
 let userInput;
 //function that adds the book/s to the library
 function addBookToLibrary() {
-    myLibrary.push(book1);
+    myLibrary.push(new Book);
 }
 
 //loop through array
@@ -37,11 +39,11 @@ button.addEventListener("click", () => {
 });
 
 confirm.addEventListener("click", function (event) {
-    createRow();
-    document.querySelector("th1");
-    document.querySelector("th2");
-    document.querySelector("th3");
-    document.querySelector("th4");
+    createRow(count);
+    const th1 = document.querySelector("#th1-"+count);
+    const th2 = document.querySelector("#th2-"+count);
+    const th3 = document.querySelector("#th3-"+count);
+    const th4 = document.querySelector("#th4-"+count);
     event.preventDefault();
     dialog.close();
     th1.textContent = title.value;
@@ -52,10 +54,10 @@ confirm.addEventListener("click", function (event) {
     } else if (notreaded.checked) {
         th4.textContent = notreaded.value;
     }
-    
+    const Book1 = new Book (th1.textContent, th2.textContent, th3.textContent, th4.textContent);
+
 });
 confirm.onclick = function () {
-    let count = 0;
     count++;
     console.log(count);
     if (count <=2) {
@@ -72,27 +74,27 @@ function displayTable() {
 }
 
 //create table row with dom
-function createRow() {
+function createRow(num) {
     let row = document.createElement("tr");
     table.appendChild(row);
-    row.setAttribute("id", "row");
+    row.setAttribute("id", "row"+num);
 
     //table headers
     let th1 = document.createElement("th");
     row.appendChild(th1);
-    th1.setAttribute("id", "th1");
+    th1.setAttribute("id", "th1-"+num);
     
     let th2 = document.createElement("th");
     row.appendChild(th2);
-    th2.setAttribute("id", "th2");
+    th2.setAttribute("id", "th2-"+num);
 
     let th3 = document.createElement("th");
     row.appendChild(th3);
-    th3.setAttribute("id", "th3");
+    th3.setAttribute("id", "th3-"+num);
 
     let th4 = document.createElement("th");
     row.appendChild(th4);
-    th4.setAttribute("id", "th4");
+    th4.setAttribute("id", "th4-"+num);
 
     let deleteBtn = document.createElement("button");
     row.appendChild(deleteBtn);
