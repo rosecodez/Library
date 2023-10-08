@@ -34,6 +34,9 @@ button, #submit {
     cursor: pointer;
     border-radius: 16px;
 }
+.delete {
+   margin-left: 10px;
+}
 button:hover, #submit:hover {
     background-color: #65a30d;
 }
@@ -59,7 +62,7 @@ form {
 .dialog {
     position: relative;
     width: 600px;
-    margin-left: 244px;
+    margin-left: 806px;
     height: 474px;
     margin-top: 85px;
 }

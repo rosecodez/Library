@@ -54,8 +54,7 @@ confirm.addEventListener("click", function (event) {
     } else if (notreaded.checked) {
         th4.textContent = notreaded.value;
     }
-    const Book1 = new Book (th1.textContent, th2.textContent, th3.textContent, th4.textContent);
-
+    
 });
 confirm.onclick = function () {
     count++;
@@ -98,7 +97,7 @@ function createRow(num) {
 
     let deleteBtn = document.createElement("button");
     row.appendChild(deleteBtn);
-    deleteBtn.setAttribute("id", "delete")
+    deleteBtn.setAttribute("class", "delete")
     deleteBtn.textContent = "Delete";
 
     deleteBtn.addEventListener("click", function (event) {
