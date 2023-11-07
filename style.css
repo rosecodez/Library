@@ -62,9 +62,8 @@ form {
 .dialog {
     position: relative;
     width: 600px;
-    margin-left: 806px;
-    height: 474px;
-    margin-top: 85px;
+    margin-left: 708px;
+    margin-top: 150px;
 }
 text {
     font-size: 20px;
@@ -78,4 +77,7 @@ input[class=form] {
 }
 input:focus {
     background-color: #f7fee7;
+}
+dialog::backdrop {
+    display: flex;
 }
